@@ -1,7 +1,7 @@
 // =========== typing animation ===========
 var typed = new Typed(".typing",{
-    strings:["Fullstack Developer","FOSS Enthusiast","Mechanical Engineer","Fullstack Developer","FOSS Enthusiast"],
-    typespeed:500,
+    strings:["AI Evaluation Engineer","Full-Stack Developer","MLOps Builder","FOSS Enthusiast","AI Researcher"],
+    typeSpeed:80,
     backSpeed:20,
     startDelay:500,
     backDelay:1500,
@@ -51,19 +51,20 @@ const nav = document.querySelector(".nav"),
     function updateNav(element){
         for(let i=0; i<totalNavList; i++){
             navList[i].querySelector("a").classList.remove("active");
-            const target = element.getAttribute("hire").split("#")[1];
+            const target = element.getAttribute("href").split("#")[1];
             if(target === navList[i].querySelector("a").getAttribute("href").split("#")[1]){
                 navList[i].querySelector("a").classList.add("active");
             }
         }
     }
-    document.querySelector(".hire-me").addEventListener("click", function(){
-        const sectionIndex = this.getAttribute("data-section-index");
-        // console.log(sectionIndex);
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
+    document.querySelectorAll(".hire-me").forEach(function(button){
+        button.addEventListener("click", function(){
+            const sectionIndex = this.getAttribute("data-section-index");
+            showSection(this);
+            updateNav(this);
+            removeBackSection();
+            addBackSection(sectionIndex);
+        })
     })
     const navTogglerBtn = document.querySelector(".nav-toggler"),
         aside = document.querySelector(".aside");
@@ -77,7 +78,6 @@ const nav = document.querySelector(".nav"),
                 allSection[i].classList.toggle("open");
             }
         }
-
 
 
 

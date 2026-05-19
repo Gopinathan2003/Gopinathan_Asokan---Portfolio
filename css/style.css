@@ -443,6 +443,11 @@ h3.my-profession{
     margin-top: 30px;
     /* background-color: rebeccapurple; */
 }
+.about .about-content .community{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 30px;
+}
 .about .about-content h3.title{
     /* background-color: red; */
     font-size: 24px;
@@ -589,26 +594,57 @@ h3.my-profession{
 .portfolio .portfolio-item{
     flex: 0 0 50%;
     max-width: 50%;
-    max-height: 50%;
     margin-bottom: 30px;
 }
 .portfolio .portfolio-item-inner{
     border: 3px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
+    background-color: var(--bg-black-100);
+    height: 100%;
 }
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-img img{
     width: 100%;
-    
-    height: 100%;
-    height: 300px;
+    height: 230px;
     display: block;
+    object-fit: cover;
     transition: all 0.5s ease;
 }
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-img img:hover{
-    width: 105%;
-    height: 102%;   
+    transform: scale(1.03);
+}
+.portfolio .portfolio-content{
+    padding: 24px;
+}
+.portfolio .portfolio-content.full{
+    min-height: 260px;
+}
+.portfolio .portfolio-content span{
+    display: block;
+    margin-bottom: 10px;
+    color: var(--skin-color);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.portfolio .portfolio-content h4{
+    color: var(--text-black-900);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.portfolio .portfolio-content p{
+    color: var(--text-black-700);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+.portfolio .portfolio-content a{
+    color: var(--text-black-900);
+    font-weight: 700;
+}
+.portfolio .portfolio-content a i{
+    color: var(--skin-color);
+    margin-left: 6px;
 }
 
 /*Contact */
@@ -649,6 +685,9 @@ h3.my-profession{
     font-weight: 700;
     color: var(--text-black-700);
     
+}
+.contact .contact-info-item a{
+    color: var(--text-black-700);
 }
 .contact .contact-form{
     flex: 0 0 100%;
@@ -734,6 +773,7 @@ h3.my-profession{
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .service .service-item,
+    .about .about-content .community,
     .about .about-content .experience,
     .about .about-content .education,
     .about .about-content .skills,
@@ -742,7 +782,6 @@ h3.my-profession{
         max-width: 100%;
     }
 }
-
 
 
 
